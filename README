@@ -1,10 +1,135 @@
-Zetalvx-Meta-Llama-3.1-8B-ChatBot-Example
+# 🧠 Zetalbot: Local LLM Fine-Tuning + RAG Assistant
 
-Small tutorial example for setting up a chatbot with python using the LLama 3.1 8B model.
+This project enables a fully local, GPU-accelerated AI assistant based on **LLaMA 3.1 8B**, with support for:
+- ✅ LoRA fine-tuning (`peft`)
+- ✅ Quantized inference (4-bit via `BitsAndBytes`)
+- ✅ Retrieval-Augmented Generation (RAG) using `ChromaDB`
+- ✅ Persistent chat with structured history
 
-The bot can be started and used locally via console.
-The bot has a function to save and load the previous history.
-The code contains an initial prompt that can be used to assign a role and give some initial informations to the bot.
+---
 
-You can see the video where I demonstrate how it works on my YouTube channel:
-https://m.youtube.com/watch?v=JJCp-EONs7Y
+## 📂 Folder Structure
+.
+├── dataset_json/ # JSON/JSONL files for LoRA fine-tuning
+├── rag_documents/ # Documents to index with RAG (ChromaDB)
+├── output_lora/ # Directory where LoRA checkpoints are saved (It is created via script. It can be deleted to clean the data and recreated.)
+├── chromadb/ # Auto-generated persistent vector store (It is created via script. It can be deleted to clean the data and recreated.)
+├── history_backup.json # JSON chat history (persisted) (It is created via script. It can be deleted to clean the data and recreated.)
+└── script.py # Main executable script
+
+---
+
+## ⚙️ Requirements
+
+Python 3.9+ and the following libraries:
+
+```bash
+torch transformers datasets peft sentence-transformers chromadb scikit-learn
+USE THE REQUIREMENTS FILE TO IMPORT THE LIBRARY (I have the file with all the libraries that i used. Many are not necessary for the project. You can use only the ones required and remove the others.)
+⚠️ Requires an NVIDIA GPU with support for:
+
+Mixed precision (float16)
+
+At least 24GB VRAM for LLaMA 3.1 8B with 4-bit quantization
+
+🚀 Quick Start
+bash
+Copia
+Modifica
+python3 script.py
+🤖 Available Commands (CLI):
+start training → Launch LoRA fine-tuning
+
+start rag → Index documents from rag_documents/
+
+exit → Close chat session
+
+🛠️ Configuration Overview
+Setting	Description
+BASE_MODEL_PATH	Hugging Face model, e.g. meta-llama/Llama-3.1-8B-Instruct
+TRAINED_LORA_PATH	Path to saved LoRA checkpoint
+MODEL_MODE	"base" or "trained"
+SYSTEM_PROMPT	System instruction at start of chat
+MAX_CONTEXT_TOKENS	Max tokens in prompt (context)
+MAX_NEW_TOKENS	Max tokens generated per answer
+
+📚 Dataset Format (LoRA Training)
+Each record should follow this schema:
+{
+  "instruction": "Translate to French",
+  "input": "Hello world",
+  "response": "Bonjour le monde"
+}
+Place one or more .json or .jsonl files in dataset_json/.
+
+📄 RAG Document Format
+Each indexed document must include:
+{
+  "id": "doc1",
+  "content": "This is the full text to embed and retrieve.",
+  "metadata": {"source": "manual", "topic": "setup"}
+}
+Add documents to rag_documents/, then run start rag.
+
+🧪 LoRA Fine-Tuning Details
+Uses:
+
+AutoModelForCausalLM + BitsAndBytesConfig
+
+prepare_model_for_kbit_training()
+
+Target modules: q_proj, k_proj, v_proj, o_proj
+
+Trainer from 🤗 Transformers
+
+Training config:
+python
+Copia
+Modifica
+TrainingArguments(
+  per_device_train_batch_size=1,
+  gradient_accumulation_steps=8,
+  learning_rate=2e-4,
+  num_train_epochs=3,
+  fp16=True
+)
+🔍 Retrieval-Augmented Generation (RAG)
+Embeddings from: sentence-transformers/msmarco-distilbert-base-v3
+
+Stored in: ChromaDB (persistent)
+
+Used at inference time to enrich prompts with real-world context
+
+💬 Chat History
+The chat uses a JSON file (history_backup.json) to:
+
+Save and load history
+
+Truncate oldest messages when token limit is exceeded
+
+System, user, and assistant messages are preserved across sessions.
+
+✅ Features Summary
+ Offline operation
+
+ Train custom assistant locally
+
+ Extend context via document retrieval (RAG)
+
+ Token-aware chat truncation
+
+ GPU quantized model loading (4bit)
+
+🧰 Recommended Hardware
+Component	Minimum
+GPU	NVIDIA with 24GB VRAM
+RAM	16 GB
+Disk	30 GB+ (model, cache, datasets)
+
+📄 License
+MIT License — use at your own risk. This project is intended for local, private experimentation only. Ensure you comply with licenses of any third-party model (e.g. Meta's LLaMA).
+
+🙋‍♂️ Author
+Zetalbot is maintained by Zetalvx.
+Created for research, experimentation, and learning about local LLMs.
+Youtube Channel: https://youtube.com/@zetalvx?si=76ovE6TxFKxUwB6e
