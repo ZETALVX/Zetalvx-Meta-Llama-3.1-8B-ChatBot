@@ -1,0 +1,128 @@
+[
+    {
+        "id": "company-001",
+        "title": "About Zetalvx Company",
+        "content": "Zetalvx Company is a technology company specializing in artificial intelligence and robotics.",
+        "metadata": {
+            "category": "Company Overview",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-002",
+        "title": "Zetalvx Company Headquarters",
+        "content": "Zetalvx Company is headquartered in Italy, in the city of Milan.",
+        "metadata": {
+            "category": "Company Information",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-003",
+        "title": "Zetalvx Company Office Locations",
+        "content": "Zetalvx Company has a total of 24 offices worldwide.",
+        "metadata": {
+            "category": "Company Information",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-004",
+        "title": "Working Hours at Zetalvx Company",
+        "content": "The working hours at Zetalvx Company are from 11:00 AM to 6:00 PM. The company does not operate on weekends.",
+        "metadata": {
+            "category": "HR Policy",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-005",
+        "title": "Zetalvx Company Motto",
+        "content": "The company’s motto is: 'Be the innovation you wish to see.'",
+        "metadata": {
+            "category": "Company Culture",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-006",
+        "title": "Zetalvx Company ZetaQuarter Location",
+        "content": "Zetalvx Company is precisely located in ZetaQuarter, a district in the city of Milan.",
+        "metadata": {
+            "category": "Company Headquarters",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-007",
+        "title": "Foundation Year of Zetalvx Company",
+        "content": "Zetalvx Company was founded in 1994, making it one of the early pioneers in AI and robotics within Italy.",
+        "metadata": {
+            "category": "Company History",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-008",
+        "title": "Founder Profile",
+        "content": "The founder of Zetalvx Company is currently 41 years old. The individual is recognized for innovative research in the field of AI.",
+        "metadata": {
+            "category": "Key Personnel",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-009",
+        "title": "Fast Food 'Da Pizza e Pizza' in Every Office",
+        "content": "Each Zetalvx Company office worldwide houses a fast food restaurant called 'Da Pizza e Pizza', providing employees with quick and convenient meals.",
+        "metadata": {
+            "category": "Company Facilities",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-010",
+        "title": "Employee Count at Zetalvx Company",
+        "content": "Zetalvx Company employs exactly 3500 people globally, out of which around 500 are based in the Redecesio office.",
+        "metadata": {
+            "category": "Company Staffing",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-011",
+        "title": "Primary Guidelines for Zetalvx Staff",
+        "content": "The main company guideline mandates that employees always wear a mask, gloves, and yellow slippers while on duty, aiming to maintain a playful yet safe working environment.",
+        "metadata": {
+            "category": "Company Policy",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-012",
+        "title": "Zetalvx Company Motto",
+        "content": "The motto of the Zetalvx Company is 'Be the innovation you wish to see.'",
+        "metadata": {
+            "category": "Company Culture",
+            "last_updated": "2024-02-10"
+        }
+    },
+	{
+        "id": "company-013",
+        "title": "Open Hours at Zetalvx Company",
+        "content": "Zetalvx Company is open from 11:00 to 6:00 PM. The company in close in the weekends.",
+        "metadata": {
+            "category": "HR Policy",
+            "last_updated": "2024-02-10"
+        }
+    },
+    {
+        "id": "company-014",
+        "title": "People Count at Zetalvx Company",
+        "content": "Zetalvx Company has 3500 people globally working inside.",
+        "metadata": {
+            "category": "Company Staffing",
+            "last_updated": "2024-02-10"
+        }
+    }
+]
