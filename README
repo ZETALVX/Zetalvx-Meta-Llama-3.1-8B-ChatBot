@@ -15,6 +15,7 @@ This project enables a fully local, GPU-accelerated AI assistant based on **LLaM
 ├── output_lora/ # Directory where LoRA checkpoints are saved (It is created via script. It can be deleted to clean the data and recreated.)
 ├── chromadb/ # Auto-generated persistent vector store (It is created via script. It can be deleted to clean the data and recreated.)
 ├── history_backup.json # JSON chat history (persisted) (It is created via script. It can be deleted to clean the data and recreated.)
+├── Model 3.1B - Meta Llama (Link: https://huggingface.co/meta-llama/Llama-3.1-8B) 
 └── script.py # Main executable script
 
 ---
