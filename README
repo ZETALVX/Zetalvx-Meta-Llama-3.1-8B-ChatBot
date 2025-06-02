@@ -23,7 +23,7 @@ This project enables a fully local, GPU-accelerated AI assistant based on **LLaM
 
 Python 3.9+ and the following libraries:
 
-```bash
+LIBRARY
 torch transformers datasets peft sentence-transformers chromadb scikit-learn
 USE THE REQUIREMENTS FILE TO IMPORT THE LIBRARY (I have the file with all the libraries that i used. Many are not necessary for the project. You can use only the ones required and remove the others.)
 ⚠️ Requires an NVIDIA GPU with support for:
