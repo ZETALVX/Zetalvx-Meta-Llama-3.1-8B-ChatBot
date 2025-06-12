@@ -34,9 +34,7 @@ Mixed precision (float16)
 At least 24GB VRAM for LLaMA 3.1 8B with 4-bit quantization
 
 🚀 Quick Start
-bash
-Copia
-Modifica
+
 python3 script.py
 🤖 Available Commands (CLI):
 start training → Launch LoRA fine-tuning
@@ -84,9 +82,6 @@ Target modules: q_proj, k_proj, v_proj, o_proj
 Trainer from 🤗 Transformers
 
 Training config:
-python
-Copia
-Modifica
 TrainingArguments(
   per_device_train_batch_size=1,
   gradient_accumulation_steps=8,
